@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Vista de arbol de Solicitud-->
+        <record id="solicitud_view_tree" model="ir.ui.view">
+            <field name="name">solicitud_view_tree</field>
+            <field name="model">solicitud</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="marca"/>
+                    <field name="modelo"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Vista Formulario de Solicitud-->
+        <record id="view_form_solicitud" model="ir.ui.view">
+            <field name="name">solicitud</field>
+            <field name="model">solicitud</field>
+            <field name="arch" type="xml">
+                <form string="solicitud_form">
+                    <center>
+                        <h1>Datos del Servicio</h1>
+                    </center>
+                    <group>
+                        <field name="tipo_solicitud" widget="radio" options="{'horizontal': true}"
+                               string="Tipo de Solicitud"/>
+                    </group>
+                    <group col='3'>
+
+                        <group>
+                            <field name="id"/>
+                            <field name="marca"
+                                   attrs="{'invisible': [('tipo_solicitud','in', ['redes','sistemas','diseño','prestamos'])]}"/>
+                        </group>
+                        <group>
+                            <field name="equipo2" string="Equipo" widget="selection"
+                                   attrs="{'invisible': [('tipo_solicitud','in', ['sistemas','diseño','prestamos'])]}"/>
+                            <field name="modelo"
+                                   attrs="{'invisible': [('tipo_solicitud','in', ['redes','sistemas','diseño','prestamos'])]}"/>
+                        </group>
+                        <group>
+                            <field name="serie"
+                                   attrs="{'invisible': [('tipo_solicitud','in', ['sistemas','diseño','prestamos'])]}"/>
+                            <field name="inventario" widget="phone"
+                                   attrs="{'invisible': [('tipo_solicitud','in', ['sistemas','diseño','prestamos'])]}"/>
+                        </group>
+                       <h4><p>Descripción:</p></h4>
+                        <field name="descripcion" placeholder="Descripción"/>
+                        <br/>
+                        <h4><p>Ubicacion:</p></h4>
+                        <field name="ubicacion" placeholder="Ubicación"/>
+                        <br/>
+                        <h3><p>Situación:</p></h3>
+                        <field name="situacion2" widget="selection"/>
+                    </group>
+                     <group>
+                                <field name="fch_evento" widget="date" attrs="{'invisible':[('tipo_solicitud', '!=', 'prestamos')]}"/>
+                                    <field name="hora_evento" widget="float_time" attrs="{'invisible':[('tipo_solicitud', '!=', 'prestamos')]}"/>
+                                    <field name="hora_entrega" widget="float_time" attrs="{'invisible':[('tipo_solicitud', '!=', 'prestamos')]}"/>
+                        </group>
+                    <group>
+                        <field name="cal_serv" widget="radio" options="{'horizontal': true}"/>
+                    </group>
+                    <notebook>
+                        <page string="Reporte Técnico">
+                            <group>
+                                <field name="reporte" attrs="{'readonly':[('reporte','in', [True])]}"/>
+                                <group>
+                                    <field name="tipo_daño" attrs="{'invisible':[('reporte','=', False)]}"/>
+                                    <field name="estado_equipo" attrs="{'invisible': [('reporte','=', False)]}"/>
+                                </group>
+
+                                <group>
+                                    <field name="fec_daño" attrs="{'invisible':[('reporte','=', False)]}"/>
+                                    <field name="observaciones_reporte" widget="text"
+                                           attrs="{'invisible':[('reporte','=', False)]}"/>
+                                    <button name="secuencia" type="object" string="crear secuencia"/>
+                                    <field name="num_reporte" readonly="1"/>
+                                </group>
+
+                            </group>
+                        </page>
+                        <page string="Acciones Realizadas">
+                            <group>
+                                <group>
+                                    <field name="accion_realizada"/>
+                                    <br/>
+                                    <br/>
+                                    <field name="observaciones"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

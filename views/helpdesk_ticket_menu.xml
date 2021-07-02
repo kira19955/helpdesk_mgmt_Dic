@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Actions -->
+
+        <record id="helpdesk_ticket_action" model="ir.actions.act_window">
+            <field name="name">Solicitud De Requerimientos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">helpdesk.ticket</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="context">{'search_default_open': 1}</field>
+        </record>
+
+
+        <record id="helpdesk_ticket_channel_action" model="ir.actions.act_window">
+            <field name="name">Channels</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">helpdesk.ticket.channel</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="helpdesk_ticket_category_action" model="ir.actions.act_window">
+            <field name="name">Categorias</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">helpdesk.ticket.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="helpdesk_ticket_team_action" model="ir.actions.act_window">
+            <field name="name">Equipos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">helpdesk.ticket.team</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="helpdesk_ticket_stage_action" model="ir.actions.act_window">
+            <field name="name">Estados de los Equipos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">helpdesk.ticket.stage</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="helpdesk_ticket_tag_action" model="ir.actions.act_window">
+            <field name="name">Etiquetas de Entrada</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">helpdesk.ticket.tag</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <!-- Menus -->
+        <menuitem id="helpdesk_ticket_main_menu" name="DIC" sequence="16" groups="group_helpdesk_user_own"/>
+
+        <menuitem id="helpdesk_ticket_menu" name="Recepcion de requerimientos"
+            parent="helpdesk_ticket_main_menu" action="helpdesk_ticket_action" sequence="10"/>
+
+
+        <menuitem id="helpdesk_ticket_config_main_menu" name="Configuracion"
+            parent="helpdesk_ticket_main_menu" sequence="35"
+            groups="group_helpdesk_manager"/>
+
+        <menuitem id="helpdesk_ticket_channel_menu" name="Channels" parent="helpdesk_ticket_config_main_menu"
+            action="helpdesk_ticket_channel_action" sequence="5"/>
+
+        <menuitem id="helpdesk_ticket_category_menu" name="Categorias" parent="helpdesk_ticket_config_main_menu"
+            action="helpdesk_ticket_category_action" sequence="15"/>
+
+        <menuitem id="helpdesk_ticket_stage_menu" name="Estados" parent="helpdesk_ticket_config_main_menu"
+         action="helpdesk_ticket_stage_action" sequence="25"/>
+
+        <menuitem id="helpdesk_ticket_team_menu" name="Equipos" parent="helpdesk_ticket_config_main_menu"
+            action="helpdesk_ticket_team_action" sequence="35"/>
+
+        <menuitem id="helpdesk_ticket_tag_menu" name="Etiquetas de Entrada"
+            parent="helpdesk_ticket_config_main_menu" action="helpdesk_ticket_tag_action" sequence="45"/>
+
+    </data>
+</odoo>

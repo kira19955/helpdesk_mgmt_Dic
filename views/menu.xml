@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Accion de ventana de tipo de mantenimiento-->
+        <record id="tipo_De_mantenimiento_action" model="ir.actions.act_window">
+            <field name="name">Catalogo de Tipo de Mantenimiento</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tipo_de_mantenimiento</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <!--Accion de ventana de tipo de equipo-->
+        <record id="tipo_de_equipo_action" model="ir.actions.act_window">
+            <field name="name">Tipo de Equipo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tipo_de_equipo</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <!--Accion de ventana de situacion-->
+        <record id="situacion_action" model="ir.actions.act_window">
+            <field name="name">Catalogo de Situación</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">situacion</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <!--Accion de ventana de centro de servicio-->
+        <record id="centro_action" model="ir.actions.act_window">
+            <field name="name">Centros de Servicios</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">centro_de_servicios</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="tipo_de_mantenimiento_ac" name="Tipo de Mantenimiento" parent="helpdesk_ticket_config_main_menu" action="tipo_De_mantenimiento_action"/>
+        <menuitem id="tipo_de_equipo_ac" name="Tipo de Equipo" parent="helpdesk_ticket_config_main_menu" action="tipo_de_equipo_action"/>
+        <menuitem id="situacion_ac" name="Situación" parent="helpdesk_ticket_config_main_menu" action="situacion_action"/>
+        <menuitem id="centro_ac" name="Centro de Servicio" parent="helpdesk_ticket_config_main_menu" action="centro_action"/>
+    </data>
+</odoo>

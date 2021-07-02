@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <!--Vista de arbol de Catalogo de Tipo de mantenimiento -->
+        <record id="tipo_de_mantenimiento_view_tree" model="ir.ui.view">
+            <field name="name">tipo_de_mantenimiento_view_tree</field>
+            <field name="model">tipo_de_mantenimiento</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" required="1" string="Descripción"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Vista de arbol de tipo de equipo -->
+        <record id="tipo_de_equipo_view_tree" model="ir.ui.view">
+            <field name="name">tipo_de_equipo_view_tree</field>
+            <field name="model">tipo_de_equipo</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" required="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Vista de arbol de catalogo situacion -->
+        <record id="situacion_view_tree" model="ir.ui.view">
+            <field name="name">situacion_view_tree</field>
+            <field name="model">situacion</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" required="1"/>
+                </tree>
+            </field>
+        </record>
+
+                 <!--Vista de arbol de centros de servicios -->
+        <record id="centros_view_tree" model="ir.ui.view">
+            <field name="name">centros_view_tree</field>
+            <field name="model">centro_de_servicios</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" required="1"/>
+                    <field name="direccion" required="1"/>
+                    <field name="tel"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>
