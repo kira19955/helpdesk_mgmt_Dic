@@ -7,6 +7,14 @@ class HelpdeskTicket(models.Model):
     _description = 'Helpdesk Ticket'
     _rec_name = 'name'
     _order = 'name desc'
+    departamento = fields.Many2one('hr.department', compute="get_department",track_visibility=True)
+
+    @api.one
+    def get_department(self):
+        user = self.env['res.users'].search([('id', '=', self._uid)])
+        employee = self.env['hr.employee'].search([('partner_id', '=', user.partner_id.id)])
+        if employee.department_id:
+            self.departamento = employee.department_id
 
     def _get_default_stage_id(self):
         return self.env['helpdesk.ticket.stage'].search([], limit=1).id

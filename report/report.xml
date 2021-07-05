@@ -11,8 +11,8 @@
 
         <template id="report_vale_salida_view">
             <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="doc">
-                    <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report_utils.custom_template">
                         <div class = "header">
                             <center>
                             <h4>DEPARTAMENTO DE INFRAESTRUCTURA Y COMUNICACIONES</h4>
@@ -21,13 +21,13 @@
                         </div>
                         <div class="page">
                             <span>No.DE REGISTRO: </span>
-                            <span t-field="doc.user_id" style="color: red"/>
+                            <span t-field="o.user_id" style="color: red"/>
                             <span>FECHA Y HORA: </span>
-                            <span t-field="doc.create_date"/>
+                            <span t-field="o.create_date"/>
                             <span>TIPO DE PETICIÓN:</span>
-                            <span t-field="doc.channel_id"/>
+                            <span t-field="o.channel_id"/>
                             <span>NOMBRE DEL SOLICITANTE:</span>
-                            <span t-field="doc.name"/>
+                            <span t-field="o.name"/>
                         </div>
                     </t>
                 </t>
