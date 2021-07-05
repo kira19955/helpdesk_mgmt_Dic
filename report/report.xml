@@ -3,10 +3,10 @@
     <data>
         <report
                 id="report_vale_salida"
-                model="requerimiento"
+                model="helpdesk.ticket"
                 string="Vale de Salida"
-                name="dic.report_vale_salida_view"
-                file="dic.report_vale_salida_view"
+                name="helpdesk_mgmt.report_vale_salida_view"
+                file="helpdesk_mgmt.report_vale_salida_view"
                 report_type="qweb-pdf"/>
 
         <template id="report_vale_salida_view">
@@ -14,7 +14,6 @@
                 <t t-foreach="docs" t-as="doc">
                     <t t-call="web.basic_layout">
                         <div class = "header">
-                             <img src="dic/static/src/img/logo.jpg" style=""/>
                             <center>
                             <h4>DEPARTAMENTO DE INFRAESTRUCTURA Y COMUNICACIONES</h4>
                             <h5>SOLICITUD DE REQUERIMIENTO</h5>
@@ -22,11 +21,11 @@
                         </div>
                         <div class="page">
                             <span>No.DE REGISTRO: </span>
-                            <span t-field="doc.id" style="color: red"/>
+                            <span t-field="doc.user_id" style="color: red"/>
                             <span>FECHA Y HORA: </span>
                             <span t-field="doc.create_date"/>
                             <span>TIPO DE PETICIÓN:</span>
-                            <span t-field="doc.tipo_peticion"/>
+                            <span t-field="doc.channel_id"/>
                             <span>NOMBRE DEL SOLICITANTE:</span>
                             <span t-field="doc.name"/>
                         </div>

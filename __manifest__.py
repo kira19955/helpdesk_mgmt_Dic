@@ -29,6 +29,7 @@
         'views/menu.xml',
         'views/requerimiento.xml',
         'views/views.xml',
+        'report/report.xml',
     ],
     'demo': [
 
