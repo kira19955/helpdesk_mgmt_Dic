@@ -3,6 +3,8 @@
 {
     'name': 'DIC',
     'summary': """
+        Modulo para la recepcion de Requerimitos 
+        del departamento DIC Fase 1
         """,
     'version': '11.0.1.11.0',
     'license': 'AGPL-3',

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <report
+                id="report_vale_salida"
+                model="requerimiento"
+                string="Vale de Salida"
+                name="dic.report_vale_salida_view"
+                file="dic.report_vale_salida_view"
+                report_type="qweb-pdf"/>
+
+        <template id="report_vale_salida_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.basic_layout">
+                        <div class = "header">
+                             <img src="dic/static/src/img/logo.jpg" style=""/>
+                            <center>
+                            <h4>DEPARTAMENTO DE INFRAESTRUCTURA Y COMUNICACIONES</h4>
+                            <h5>SOLICITUD DE REQUERIMIENTO</h5>
+                            </center>
+                        </div>
+                        <div class="page">
+                            <span>No.DE REGISTRO: </span>
+                            <span t-field="doc.id" style="color: red"/>
+                            <span>FECHA Y HORA: </span>
+                            <span t-field="doc.create_date"/>
+                            <span>TIPO DE PETICIÓN:</span>
+                            <span t-field="doc.tipo_peticion"/>
+                            <span>NOMBRE DEL SOLICITANTE:</span>
+                            <span t-field="doc.name"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
