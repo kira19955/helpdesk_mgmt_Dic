@@ -11,7 +11,7 @@
     'category': '',
     'author': 'Luis Antonio Cruz Gutierrez',
     'website': '',
-    'depends': ['base','hr','contacts','directions_utils','mail'],
+    'depends': ['base', 'hr', 'contacts', 'directions_utils', 'mail'],
     'data': [
         'data/helpdesk_data.xml',
         'security/helpdesk_security.xml',

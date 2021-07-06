@@ -13,21 +13,49 @@
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-call="report_utils.custom_template">
-                        <div class = "header">
-                            <center>
-                            <h4>DEPARTAMENTO DE INFRAESTRUCTURA Y COMUNICACIONES</h4>
-                            <h5>SOLICITUD DE REQUERIMIENTO</h5>
-                            </center>
-                        </div>
+                        <style>
+                            .fecha{
+                            text-align: right;
+                            font-size: 15px;
+                            }
+
+                            .text{
+                            font-size: 18px;
+                            }
+
+                        </style>
                         <div class="page">
-                            <span>No.DE REGISTRO: </span>
-                            <span t-field="o.user_id" style="color: red"/>
-                            <span>FECHA Y HORA: </span>
-                            <span t-field="o.create_date"/>
-                            <span>TIPO DE PETICIÓN:</span>
-                            <span t-field="o.channel_id"/>
-                            <span>NOMBRE DEL SOLICITANTE:</span>
-                            <span t-field="o.name"/>
+
+                            <div class="fecha">
+                                <span>Fecha y Hora: </span>
+                                <span t-field="o.create_date"/>
+                            </div>
+                            <p>Se entrega el siguiente equipo :</p>
+                            <br/>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">EQUIPO</th>
+                                        <th scope="col">MARCA</th>
+                                        <th scope="col">SERIE</th>
+                                        <th scope="col">NO. DE INVENTARIO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.solicitud2" t-as="doc">
+                                        <td><span t-field="doc.equipo2"/></td>
+                                        <td><span t-field="doc.marca"/></td>
+                                        <td><span t-field="doc.serie"/></td>
+                                        <td><span t-field="doc.inventario"/></td>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <br />
+                            <span>DEPENDENCIA Y AREA : </span>
+                                <span t-field="o.dep_padre"/>
+                            <br />
+                            <br />
+                            <span>PERSONA QUIEN RECOGE: _________________________________________</span>
                         </div>
                     </t>
                 </t>

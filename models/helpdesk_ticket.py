@@ -74,7 +74,6 @@ class HelpdeskTicket(models.Model):
         ('blocked', 'Blocked')], string='Kanban State')
 
     dep_padre = fields.Many2one(comodel_name="hr.department")
-    dep_hijo = fields.Many2one(comodel_name="hr.department")
     solicitud2 = fields.One2many(
         comodel_name='solicitud',
         inverse_name='requerimiento2',
