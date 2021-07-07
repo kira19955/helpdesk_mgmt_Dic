@@ -26,3 +26,4 @@ class CentroDeServicios(models.Model):
     name = fields.Char(string="Descripción")
     tel = fields.Char(string="Teléfono")
     direccion = fields.Char(string="Dirección")
+

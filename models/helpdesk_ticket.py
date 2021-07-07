@@ -112,3 +112,25 @@ class HelpdeskTicket(models.Model):
         if not vals.get('create_date'):
             res['create_date'] = fields.Datetime.now()
         return res
+
+class print_report_vale_salida_view(models.AbstractModel):
+    _name = 'report.helpdesk_mgmt.report_vale_salida_view'
+
+    @api.model
+    def get_report_values(self,docids, data=None):
+        docs = self.env['helpdesk.ticket'].browse(docids[0])
+
+        jefe_departamento = self.env['hr.department'].search([('name','=','Departamento de Infraestructura y Comunicaciones')])
+
+        if jefe_departamento.manager_id.partner_id.title.display_name != False and jefe_departamento.manager_id.partner_id.title.display_name != "False" and jefe_departamento.manager_id.partner_id.title.display_name != "":
+            titulo_contralor = str(jefe_departamento.manager_id.partner_id.title.display_name) + " "    
+        else:
+            titulo_contralor = ""
+
+        jefe_departamento = titulo_contralor +str(jefe_departamento.manager_id.name)
+        
+        return {
+            'doc_model' : 'helpdesk',
+            'docs': docs,
+            'jefe_departamento': jefe_departamento,
+        }
