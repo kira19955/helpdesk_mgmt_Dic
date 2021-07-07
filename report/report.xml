@@ -58,7 +58,7 @@
                             <br />
                             <br />
                             <span>PERSONA QUIEN RECOGE: _________________________________________</span>
-
+                            <span t-esc="jefe_departamento"/>
                         </div>
                     </t>
                 </t>
