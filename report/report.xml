@@ -16,7 +16,6 @@
                         <style>
                             .fecha{
                             text-align: right;
-                            font-size: 15px;
                             }
 
                             .text{
@@ -25,6 +24,9 @@
 
                         </style>
                         <div class="page">
+                            <div style="text-align: center;">
+                            <span >VALE DE SALIDA</span>
+                            </div>
 
                             <div class="fecha">
                                 <span>Fecha y Hora: </span>
@@ -56,6 +58,7 @@
                             <br />
                             <br />
                             <span>PERSONA QUIEN RECOGE: _________________________________________</span>
+
                         </div>
                     </t>
                 </t>

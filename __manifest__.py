@@ -24,11 +24,11 @@
         'views/helpdesk_ticket_category_view.xml',
         'views/helpdesk_ticket_channel_view.xml',
         'views/helpdesk_ticket_tag_view.xml',
-        
         'views/menu.xml',
         'views/requerimiento.xml',
         'views/views.xml',
         'report/report.xml',
+        'report/report2.xml',
     ],
     'demo': [
 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="solicitud_de_requerimiento"
+                model="helpdesk.ticket"
+                report_type="qweb-pdf"
+                string="SOLICITUD DE REQUERIMIENTO"
+                name="helpdesk_mgmt.report_solicitud_de_requerimiento_view"
+                file="helpdesk_mgmt.report_solicitud_de_requerimiento_view"
+        />
+
+        <template id="report_solicitud_de_requerimiento_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report_utils.custom_template">
+                        <style>
+                            .id{
+                            text-align: right;
+                            }
+                        </style>
+
+                        <div class="page">
+
+                            <div class="id">
+                                <span>NO. DE REGISTRO: </span>
+                                <span t-field="o.id"/>
+                                <br/>
+                                <span>FECHA Y HORA: </span>
+                                <span t-field="o.create_date"/>
+                            </div>
+
+                            <div class="">
+                                <span>TIPO DE PETICION: </span>
+                                <span t-field="o.channel_id"/>
+                                <br/>
+                                <br/>
+                                <span>DEPENDENCIA Y AREA:</span>
+                                <span t-field="o.dep_padre"/>
+                                <br/>
+                                <br/>
+                                <span>NOMBRE DEL SOLICITANTE:</span>
+                                <span t-field="o.name"/>
+                            </div>
+
+                            <br/>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">TIPO DE SOLICITUD</th>
+                                        <th scope="col">EQUIPO</th>
+                                        <th scope="col">MARCA</th>
+                                        <th scope="col">SERIE</th>
+                                        <th scope="col">NO. DE INVENTARIO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.solicitud2" t-as="doc">
+                                        <td><span t-field="doc.tipo_solicitud"/></td>
+                                        <td><span t-field="doc.equipo2"/></td>
+                                        <td><span t-field="doc.marca"/></td>
+                                        <td><span t-field="doc.serie"/></td>
+                                        <td><span t-field="doc.inventario"/></td>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <t t-foreach="o.solicitud2" t-as="doc1">
+                                <div class="descripcion">
+                                    <span>DESCRIPCION:</span>
+                                    <span t-field="doc1.descripcion"/>
+                                </div>
+                            </t>
+                            <br/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
