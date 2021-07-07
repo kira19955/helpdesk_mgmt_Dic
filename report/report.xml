@@ -43,14 +43,15 @@
                                         <th scope="col">NO. DE INVENTARIO</th>
                                     </tr>
                                 </thead>
+                        <t t-foreach="o.solicitud2" t-as="doc">
                                 <tbody>
-                                    <t t-foreach="o.solicitud2" t-as="doc">
+
                                         <td><span t-field="doc.equipo2"/></td>
                                         <td><span t-field="doc.marca"/></td>
                                         <td><span t-field="doc.serie"/></td>
                                         <td><span t-field="doc.inventario"/></td>
-                                    </t>
                                 </tbody>
+                                </t>
                             </table>
                             <br />
                             <span>DEPENDENCIA Y AREA : </span>
@@ -58,7 +59,17 @@
                             <br />
                             <br />
                             <span>PERSONA QUIEN RECOGE: _________________________________________</span>
-                            <span t-esc="jefe_departamento"/>
+                            <br />
+                            <br />
+
+                            <div>
+                                <span>AUTORIZA LA ENTREGA</span>
+                                <br />
+                                <br />
+                                <p>______________________</p>
+                                <span t-esc="jefe_departamento"/>
+                            </div>
+
                         </div>
                     </t>
                 </t>

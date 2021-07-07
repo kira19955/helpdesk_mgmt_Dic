@@ -130,7 +130,7 @@ class print_report_vale_salida_view(models.AbstractModel):
         jefe_departamento = titulo_contralor +str(jefe_departamento.manager_id.name)
         
         return {
-            'doc_model' : 'helpdesk',
+            'doc_model': 'helpdesk',
             'docs': docs,
             'jefe_departamento': jefe_departamento,
         }
