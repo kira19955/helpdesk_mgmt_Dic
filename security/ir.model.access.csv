@@ -1,20 +1,34 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_helpdesk_ticket_manager,helpdesk.ticket.manager,model_helpdesk_ticket,group_helpdesk_manager,1,1,1,1
-access_helpdesk_ticket_user,helpdesk.ticket.user,model_helpdesk_ticket,group_helpdesk_user,1,1,1,0
-access_helpdesk_ticket_user_personal,helpdesk.ticket.user.personal,model_helpdesk_ticket,group_helpdesk_user_own,1,1,1,0
-access_helpdesk_ticket_portal,helpdesk.ticket.portal,model_helpdesk_ticket,base.group_portal,1,0,0,0
-access_helpdesk_ticket_stage_manager,helpdesk.ticket.stage.manager,model_helpdesk_ticket_stage,group_helpdesk_manager,1,1,1,1
-access_helpdesk_ticket_stage_user,helpdesk.ticket.stage.user,model_helpdesk_ticket_stage,base.group_user,1,0,0,0
-access_helpdesk_ticket_stage_portal,helpdesk.ticket.stage.portal,model_helpdesk_ticket_stage,base.group_portal,1,0,0,0
-access_helpdesk_ticket_stage_public,helpdesk.ticket.stage.public,model_helpdesk_ticket_stage,base.group_public,1,1,0,0
-access_helpdesk_ticket_tag_manager,helpdesk.ticket.tag.manager,model_helpdesk_ticket_tag,group_helpdesk_manager,1,1,1,1
-access_helpdesk_ticket_tag_user,helpdesk.ticket.tag.user,model_helpdesk_ticket_tag,base.group_user,1,0,0,0
-access_helpdesk_ticket_team_manager,helpdesk.ticket.team.manager,model_helpdesk_ticket_team,group_helpdesk_manager,1,1,1,1
-access_helpdesk_ticket_team_user,helpdesk.ticket.team.user,model_helpdesk_ticket_team,base.group_user,1,0,0,0
-access_helpdesk_ticket_channel_manager,helpdesk.ticket.channel.manager,model_helpdesk_ticket_channel,group_helpdesk_manager,1,1,1,1
-access_helpdesk_ticket_channel_user,helpdesk.ticket.channel.user,model_helpdesk_ticket_channel,base.group_user,1,0,0,0
-access_helpdesk_ticket_category_manager,helpdesk.ticket.category.manager,model_helpdesk_ticket_category,group_helpdesk_manager,1,1,1,1
-access_helpdesk_ticket_category_user,helpdesk.ticket.category.user,model_helpdesk_ticket_category,base.group_user,1,0,0,0
-access_helpdesk_ticket_category_portal,helpdesk.ticket.category.portal,model_helpdesk_ticket_category,base.group_portal,1,0,0,0
-access_helpdesk_ticket_category_public,helpdesk.ticket.category.public,model_helpdesk_ticket_category,base.group_public,1,0,0,0
-solicitud_tecnico,solicitud tecnico,model_solicitud,group_helpdesk_user_own,1,1,1,1
+ticket_1_tecnico,ticket 1 tecnico,model_helpdesk_ticket,group_helpdesk_user_own,1,1,0,0
+ticket_2_tecnico,ticket 2 tecnico,model_helpdesk_ticket_category,group_helpdesk_user_own,0,0,0,0
+ticket_3_tecnico,ticket 3 tecnico,model_helpdesk_ticket_channel,group_helpdesk_user_own,0,0,0,0
+ticket_4_tecnico,ticket 4 tecnico,model_helpdesk_ticket_stage,group_helpdesk_user_own,1,1,0,0
+ticket_5_tecnico,ticket 5 tecnico,model_helpdesk_ticket_tag,group_helpdesk_user_own,0,0,0,0
+ticket_6_tecnico,ticket 6 tecnico,model_helpdesk_ticket_team,group_helpdesk_user_own,0,0,0,0
+tipo_de_mantenimiento_tecnico,tipo de mantenimiento tecnico,model_tipo_de_mantenimiento,group_helpdesk_user_own,0,0,0,0
+tipo_de_equipo_tecnico,tipo de equipo tecnico,model_tipo_de_equipo,group_helpdesk_user_own,1,0,0,0
+situacion_tecnico,situacion tecnico,model_situacion,group_helpdesk_user_own,1,0,0,0
+centro_de_servicios_tecnico,centro de servicios tecnico,model_centro_de_servicios,group_helpdesk_user_own,0,0,0,0
+solicitud_tecnico,solicitud tecnico,model_solicitud,group_helpdesk_user_own,1,1,0,0
+ticket_1_capturista,ticket 1 capturista,model_helpdesk_ticket,group_helpdesk_user,1,0,1,0
+ticket_2_capturista,ticket 2 capturista,model_helpdesk_ticket_category,group_helpdesk_user,1,1,1,1
+ticket_3_capturista,ticket 3 capturista,model_helpdesk_ticket_channel,group_helpdesk_user,1,1,1,1
+ticket_4_capturista,ticket 4 capturista,model_helpdesk_ticket_stage,group_helpdesk_user,1,1,1,1
+ticket_5_capturista,ticket 5 capturista,model_helpdesk_ticket_tag,group_helpdesk_user,1,1,1,1
+ticket_6_capturista,ticket 6 capturista,model_helpdesk_ticket_team,group_helpdesk_user,1,1,1,1
+tipo_de_mantenimiento_capturista,tipo de mantenimiento capturista,model_tipo_de_mantenimiento,group_helpdesk_user,1,1,1,1
+tipo_de_equipo_capturista,tipo de equipo capturista,model_tipo_de_equipo,group_helpdesk_user,1,1,1,1
+situacion_capturista,situacion capturista,model_situacion,group_helpdesk_user,1,1,1,1
+centro_de_servicios_capturista,centro de servicios capturista,model_centro_de_servicios,group_helpdesk_user,1,1,1,1
+solicitud_capturista,solicitud capturista,model_solicitud,group_helpdesk_user,1,0,1,0
+ticket_1_admin,ticket 1 admin,model_helpdesk_ticket,group_helpdesk_manager,1,1,1,1
+ticket_2_admin,ticket 2 admin,model_helpdesk_ticket_category,group_helpdesk_manager,1,1,1,1
+ticket_3_admin,ticket 3 admin,model_helpdesk_ticket_channel,group_helpdesk_manager,1,1,1,1
+ticket_4_admin,ticket 4 admin,model_helpdesk_ticket_stage,group_helpdesk_manager,1,1,1,1
+ticket_5_admin,ticket 5 admin,model_helpdesk_ticket_tag,group_helpdesk_manager,1,1,1,1
+ticket_6_admin,ticket 6 admin,model_helpdesk_ticket_team,group_helpdesk_manager,1,1,1,1
+tipo_de_mantenimiento_admin,tipo de mantenimiento admin,model_tipo_de_mantenimiento,group_helpdesk_manager,1,1,1,1
+tipo_de_equipo_admin,tipo de equipo admin,model_tipo_de_equipo,group_helpdesk_manager,1,1,1,1
+situacion_admin,situacion admin,model_situacion,group_helpdesk_manager,1,1,1,1
+centro_de_servicios_admin,centro de servicios admin,model_centro_de_servicios,group_helpdesk_manager,1,1,1,1
+solicitud_admin,solicitud admin,model_solicitud,group_helpdesk_manager,1,1,1,1

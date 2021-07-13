@@ -29,6 +29,7 @@
         'views/views.xml',
         'report/report.xml',
         'report/report2.xml',
+        'report/report3.xml',
     ],
     'demo': [
 

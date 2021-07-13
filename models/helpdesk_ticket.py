@@ -19,7 +19,7 @@ class HelpdeskTicket(models.Model):
     def _get_default_stage_id(self):
         return self.env['helpdesk.ticket.stage'].search([], limit=1).id
 
-    name = fields.Char(string='Nombre Del Solicitante', required=True)
+    name = fields.Char(string='Nombre Del Solicitante', required=True, readonly=False)
 
     user_id = fields.Many2one(
         'res.users',

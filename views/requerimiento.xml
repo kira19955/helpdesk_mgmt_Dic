@@ -97,5 +97,181 @@
             </field>
         </record>
 
+        <!-- Inherit Form View to Modify it -->
+    <record id="tecnico" model="ir.ui.view">
+        <field name="name">tecnico</field>
+        <field name="model">solicitud</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.view_form_solicitud"/>
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_mgmt.group_helpdesk_user_own') ])]" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tipo_solicitud']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='serie']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='equipo2']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='marca']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='modelo']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='inventario']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='descripcion']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='ubicacion']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='descripcion']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='cal_serv']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tipo_daño']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='estado_equipo']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='fec_daño']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='observaciones_reporte']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='accion_realizada']" position="attributes">
+                <attribute name="readonly">0</attribute>
+                <attribute name="required">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='observaciones']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="tecnico_1" model="ir.ui.view">
+        <field name="name">tecnico</field>
+        <field name="model">solicitud</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.view_form_solicitud"/>
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_mgmt.group_helpdesk_manager') ])]" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='serie']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tipo_solicitud']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='equipo2']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='marca']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='modelo']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='inventario']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='descripcion']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='ubicacion']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='descripcion']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='cal_serv']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tipo_daño']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='estado_equipo']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='fec_daño']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='observaciones_reporte']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='accion_realizada']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="required">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='observaciones']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+        <record id="tecnico_1_2" model="ir.ui.view">
+        <field name="name">tecnico</field>
+        <field name="model">solicitud</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.view_form_solicitud"/>
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_mgmt.group_helpdesk_user') ])]" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='serie']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tipo_solicitud']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='equipo2']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='marca']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='modelo']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='inventario']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='descripcion']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='ubicacion']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='descripcion']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='cal_serv']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tipo_daño']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='estado_equipo']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='fec_daño']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='observaciones_reporte']" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='accion_realizada']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="required">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='observaciones']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
     </data>
 </odoo>

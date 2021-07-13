@@ -3,18 +3,68 @@
     <data>
 
         <report
-                id="report_ModelName"
-                model="ProjectName.ModelName"
-                string="ReportTitle"
-                name="ProjectName.report_ModelName_view"
-                file="ProjectName.report_ModelName"
+                id="rep_tec"
+                model="helpdesk.ticket"
+                string="Reporte TÉCNICO"
+                name="helpdesk_mgmt.report_tec"
+                file="helpdesk_mgmt.report_tec"
                 report_type="qweb-pdf"/>
 
-        <template id="report_ModelName_view">
+        <template id="report_tec">
             <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="doc">
-                    <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report_utils.custom_template">
                         <div class="page">
+                            <span t-field="o.dep_padre.manager_id"/>
+                            <br/>
+                            <span t-field="o.dep_padre.name"/>
+                        </div>
+                        <br/>
+                        <br/>
+                        <p style="text-align:center">Diagnostico de mantenimiento relacionado con el siguiente equipo.</p>
+                        <table class="table">
+                                <thead>
+                                    <t t-foreach="o.solicitud2" t-as="doc">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                    </t>
+                                </thead>
+                            <t t-foreach="o.solicitud2" t-as="doc">
+                                    <tbody>
+                                        <td><span t-field="doc.equipo2"/></td>
+                                        <td><span t-field="doc.tipo_daño"/></td>
+                                    </tbody>
+                                </t>
+                            <br/>
+                            <br/>
+
+                        </table>
+                        <span>OBSERVACIONES:</span>
+                            <br/>
+                            <br/>
+
+                        <t t-foreach="o.solicitud2" t-as="doc1">
+                                <span t-field="doc1.estado_equipo"/>
+                            </t>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <p style="text-align:center">Sin otro particular por el momento, le envío un cordial saludo</p>
+                        <div style="text-alight:center;margin: 0 auto;">
+                            <br/>
+                            <span>ATENTAMENTE</span>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <span>___________________________</span>
+                            <span t-esc="jefe_departamento"/>
+                            <br/>
+                            <br/>
+                            <span t-field="o.dep_padre.name"/>
 
                         </div>
                     </t>
