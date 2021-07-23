@@ -76,8 +76,6 @@
                                     <field name="fec_daño" attrs="{'invisible':[('reporte','=', False)]}"/>
                                     <field name="observaciones_reporte" widget="text"
                                            attrs="{'invisible':[('reporte','=', False)]}"/>
-                                    <button name="secuencia" type="object" string="crear secuencia"/>
-                                    <field name="num_reporte" readonly="1"/>
                                 </group>
 
                             </group>

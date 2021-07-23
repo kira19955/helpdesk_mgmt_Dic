@@ -33,7 +33,8 @@
                                 </thead>
                             <t t-foreach="o.solicitud2" t-as="doc">
                                     <tbody>
-                                        <td><span t-field="doc.equipo2"/></td>
+                                        <td><span t-field="doc.equipo2"/>
+                                        </td>
                                         <td><span t-field="doc.tipo_daño"/></td>
                                     </tbody>
                                 </t>
@@ -54,14 +55,16 @@
                         <br/>
                         <br/>
                         <p style="text-align:center">Sin otro particular por el momento, le envío un cordial saludo</p>
-                        <div style="text-alight:center;margin: 0 auto;">
+                        <div style="width: 200px;height: 200px;margin: 0 auto;">
                             <br/>
                             <span>ATENTAMENTE</span>
                             <br/>
                             <br/>
                             <br/>
-                            <span>___________________________</span>
-                            <span t-esc="jefe_departamento"/>
+                            <span>______________________</span>
+                            <br />
+                            <br/>
+                            <span t-field="o.dep_padre.manager_id.job_id"/> <span t-field="o.dep_padre.manager_id"/>
                             <br/>
                             <br/>
                             <span t-field="o.dep_padre.name"/>

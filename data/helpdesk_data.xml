@@ -1,73 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-    <record model="ir.module.category" id="module_helpdesk_category">
-      <field name="name">DIC</field>
-      <field name="sequence">9</field>
-    </record>
-  </data>
-  <data noupdate="1">
+    <data>
 
-    <!-- Sequence -->
-    <record id="helpdesk_ticket_sequence" model="ir.sequence">
-      <field name="name">Helpdesk Ticket Sequence</field>
-      <field name="code">helpdesk.ticket.sequence</field>
-      <field name="prefix">HT</field>
-      <field name="padding">5</field>
-      <field name="company_id"/>
-    </record>
+        <record model="tipo_de_mantenimiento" id="ejem_hardware">
+            <field name="name">Hardware</field>
+        </record>
+        <record model="tipo_de_mantenimiento" id="ejem_software">
+            <field name="name">Software</field>
+        </record>
+        <record model="tipo_de_mantenimiento" id="Redes_de_datos">
+            <field name="name">Redes de datos</field>
+        </record>
+        <record model="tipo_de_mantenimiento" id="red_de_telefonia">
+            <field name="name">Red de telefonia</field>
+        </record>
+        <record model="tipo_de_mantenimiento" id="sistemas">
+            <field name="name">Sistemas</field>
+        </record>
+        <record model="tipo_de_mantenimiento" id="ejem_otro">
+            <field name="name">Otro</field>
+        </record>
 
-    <!-- Stages -->
-    <record id="helpdesk_ticket_stage_new" model="helpdesk.ticket.stage">
-      <field name="sequence">1</field>
-      <field name="name">Nuevo</field>
-      <field name="unattended">True</field>
-      <field name="closed">False</field>
-      <field name="company_id"/>
-    </record>
-    <record id="helpdesk_ticket_stage_in_progress" model="helpdesk.ticket.stage">
-      <field name="sequence">2</field>
-      <field name="name">En proceso</field>
-      <field name="unattended">False</field>
-      <field name="closed">False</field>
-      <field name="company_id"/>
-    </record>
-    <record id="helpdesk_ticket_stage_awaiting" model="helpdesk.ticket.stage">
-      <field name="sequence">3</field>
-      <field name="name">En Espera</field>
-      <field name="unattended">False</field>
-      <field name="closed">False</field>
-      <field name="company_id"/>
-    </record>
-    <record id="helpdesk_ticket_stage_done" model="helpdesk.ticket.stage">
-      <field name="sequence">3</field>
-      <field name="name">Terminado</field>
-      <field name="unattended">False</field>
-      <field name="closed">True</field>
-      <field name="fold">True</field>
-      <field name="company_id"/>
-    </record>
-    <record id="helpdesk_ticket_stage_cancelled" model="helpdesk.ticket.stage">
-      <field name="sequence">4</field>
-      <field name="name">Cancelado</field>
-      <field name="unattended">False</field>
-      <field name="closed">True</field>
-      <field name="fold">True</field>
-      <field name="company_id"/>
-    </record>
+        <record model="ir.module.category" id="module_helpdesk_category">
+            <field name="name">DIC</field>
+            <field name="sequence">9</field>
+        </record>
+    </data>
+    <data noupdate="1">
 
-    <!-- Channels -->
-    <record id="helpdesk_ticket_channel_web" model="helpdesk.ticket.channel">
-      <field name="name">Web</field>
-    </record>
-    <record id="helpdesk_ticket_channel_email" model="helpdesk.ticket.channel">
-      <field name="name">Email</field>
-    </record>
-    <record id="helpdesk_ticket_channel_phone" model="helpdesk.ticket.channel">
-      <field name="name">Telefono</field>
-    </record>
-    <record id="helpdesk_ticket_channel_other" model="helpdesk.ticket.channel">
-      <field name="name">Otro</field>
-    </record>
-  </data>
+        <!-- Sequence -->
+        <record id="helpdesk_ticket_sequence" model="ir.sequence">
+            <field name="name">Helpdesk Ticket Sequence</field>
+            <field name="code">helpdesk.ticket.sequence</field>
+            <field name="prefix">HT</field>
+            <field name="padding">5</field>
+            <field name="company_id"/>
+        </record>
+
+        <!-- Stages -->
+        <record id="helpdesk_ticket_stage_new" model="helpdesk.ticket.stage">
+            <field name="sequence">1</field>
+            <field name="name">Nuevo</field>
+            <field name="unattended">True</field>
+            <field name="closed">False</field>
+            <field name="company_id"/>
+        </record>
+        <record id="helpdesk_ticket_stage_in_progress" model="helpdesk.ticket.stage">
+            <field name="sequence">2</field>
+            <field name="name">En proceso</field>
+            <field name="unattended">False</field>
+            <field name="closed">False</field>
+            <field name="company_id"/>
+        </record>
+        <record id="helpdesk_ticket_stage_awaiting" model="helpdesk.ticket.stage">
+            <field name="sequence">3</field>
+            <field name="name">En Espera</field>
+            <field name="unattended">False</field>
+            <field name="closed">False</field>
+            <field name="company_id"/>
+        </record>
+        <record id="helpdesk_ticket_stage_done" model="helpdesk.ticket.stage">
+            <field name="sequence">3</field>
+            <field name="name">Terminado</field>
+            <field name="unattended">False</field>
+            <field name="closed">True</field>
+            <field name="fold">True</field>
+            <field name="company_id"/>
+        </record>
+        <record id="helpdesk_ticket_stage_cancelled" model="helpdesk.ticket.stage">
+            <field name="sequence">4</field>
+            <field name="name">Cancelado</field>
+            <field name="unattended">False</field>
+            <field name="closed">True</field>
+            <field name="fold">True</field>
+            <field name="company_id"/>
+        </record>
+
+        <!-- Channels -->
+        <record id="helpdesk_ticket_channel_web" model="helpdesk.ticket.channel">
+            <field name="name">Web</field>
+        </record>
+        <record id="helpdesk_ticket_channel_email" model="helpdesk.ticket.channel">
+            <field name="name">Email</field>
+        </record>
+        <record id="helpdesk_ticket_channel_phone" model="helpdesk.ticket.channel">
+            <field name="name">Telefono</field>
+        </record>
+        <record id="helpdesk_ticket_channel_other" model="helpdesk.ticket.channel">
+            <field name="name">Otro</field>
+        </record>
+    </data>
 </odoo>
