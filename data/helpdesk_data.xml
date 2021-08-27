@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!--CENTROS DE SERVICIO -->
+        <record model="centro_de_servicios" id="treviño">
+            <field name="name">Treviño</field>
+            <field name="tel">8-17-93-92</field>
+        </record>
+        <record model="centro_de_servicios" id="celecti">
+            <field name="name">CELECTI</field>
+            <field name="tel">8-18-78-33</field>
+        </record>
+        <record model="centro_de_servicios" id="mapcom">
+            <field name="name">MAPCOM</field>
+            <field name="tel">8-41-14-50</field>
+        </record>
+        <record model="centro_de_servicios" id="asser">
+            <field name="name">ASSER</field>
+            <field name="tel">8-14-53-39, 8-14-90-72</field>
+        </record>
+        <record model="centro_de_servicios" id="lanix">
+            <field name="name">LANIX</field>
+        </record>
+        <record model="centro_de_servicios" id="h_p">
+            <field name="name">H.P.</field>
+        </record>
+
+        <!-- SITUACION DEL EQUIPO DE COMPUTO-->
+        <record model="situacion" id="garantia">
+            <field name="name">Garantia</field>
+        </record>
+        <record model="situacion" id="Equipo_no_Recibido">
+            <field name="name">Equipo no Recibido</field>
+        </record>
+        <record model="situacion" id="Para_Entrega">
+            <field name="name">Para Entrega</field>
+        </record>
+        <record model="situacion" id="No_Atendida">
+            <field name="name">No Atendida</field>
+        </record>
+        <record model="situacion" id="En_Proceso">
+            <field name="name">En Proceso</field>
+        </record>
+        <record model="situacion" id="No_Procede">
+            <field name="name">No Procede</field>
+        </record>
+        <record model="situacion" id="Atendida">
+            <field name="name">Atendida</field>
+        </record>
+        <record model="situacion" id="Cancelación">
+            <field name="name">Cancelación</field>
+        </record>
+        <record model="situacion" id="Para_Oficio">
+            <field name="name">Para Oficio</field>
+        </record>
+        <record model="situacion" id="Pend_Oficio">
+            <field name="name">Pend. Oficio</field>
+        </record>
+
+        <!-- CATEGORIAS DE MANTENIMEINTO-->
+        <record model="centro_de_servicios" id="treviño">
+            <field name="name">Treviño</field>
+            <field name="tel">8-17-93-92</field>
+        </record>
+
+
+
 
         <record model="tipo_de_mantenimiento" id="ejem_hardware">
             <field name="name">Hardware</field>
